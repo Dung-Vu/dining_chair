@@ -3,12 +3,12 @@ import './Gallery.css';
 
 const Gallery = () => {
   const galleryItems = [
-    { id: 1, span: 'large', title: 'Modern Living' },
-    { id: 2, span: 'small', title: 'Detail Shot' },
-    { id: 3, span: 'medium', title: 'Classic Design' },
-    { id: 4, span: 'medium', title: 'Craftsmanship' },
-    { id: 5, span: 'small', title: 'Texture' },
-    { id: 6, span: 'large', title: 'Dining Space' }
+    { id: 'gemini', span: 'large', title: 'Modern Living' },
+    { id: 'gemini', span: 'small', title: 'Detail Shot' },
+    { id: 'gemini', span: 'medium', title: 'Classic Design' },
+    { id: 'gemini1', span: 'medium', title: 'Craftsmanship' },
+    { id: 'gemini1', span: 'small', title: 'Texture' },
+    { id: 'gemini1', span: 'large', title: 'Dining Space' }
   ];
 
   return (
@@ -30,7 +30,9 @@ const Gallery = () => {
           {galleryItems.map(item => (
             <div key={item.id} className={`gallery-item ${item.span}`}>
               <div className="gallery-image">
-                <div className="image-placeholder"></div>
+                <div className="image-placeholder">
+                    <img src={`/assets/img/${item.id}.png`} alt={item.title} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                </div>
                 <div className="gallery-overlay">
                   <div className="overlay-content">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

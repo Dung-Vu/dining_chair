@@ -17,6 +17,7 @@ const Collection = () => {
       name: 'Nordic Oak Chair',
       category: 'modern',
       price: '12.500.000',
+      image: '/assets/img/gemini.png',
       description: 'Ghế gỗ sồi Bắc Âu với đường nét hiện đại'
     },
     {
@@ -24,6 +25,7 @@ const Collection = () => {
       name: 'Classic Walnut',
       category: 'classic',
       price: '15.800.000',
+      image: '/assets/img/gemini1.png',
       description: 'Ghế gỗ óc chó phong cách cổ điển sang trọng'
     },
     {
@@ -31,6 +33,7 @@ const Collection = () => {
       name: 'Minimal Ash',
       category: 'minimalist',
       price: '10.200.000',
+      image: '/assets/img/gemini2.png',
       description: 'Thiết kế tối giản với gỗ tần bì tự nhiên'
     },
     {
@@ -38,6 +41,7 @@ const Collection = () => {
       name: 'Scandinavian Teak',
       category: 'modern',
       price: '18.500.000',
+      image: '/assets/img/michelle.jpg',
       description: 'Ghế gỗ tếch phong cách Bắc Âu cao cấp'
     },
     {
@@ -45,6 +49,7 @@ const Collection = () => {
       name: 'Heritage Mahogany',
       category: 'classic',
       price: '22.000.000',
+      image: '/assets/img/arden.jpg',
       description: 'Gỗ gụ quý hiếm với chạm khắc tinh xảo'
     },
     {
@@ -52,6 +57,7 @@ const Collection = () => {
       name: 'Pure Beech',
       category: 'minimalist',
       price: '9.800.000',
+      image: '/assets/img/michelle1.jpg',
       description: 'Ghế gỗ sồi trắng đơn giản, thanh lịch'
     }
   ];
@@ -94,6 +100,7 @@ const Collection = () => {
             <div key={product.id} className="product-card">
               <div className="product-image">
                 <div className="image-placeholder">
+                  <img src={product.image} alt={product.name} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
                   <div className="product-overlay">
                     <button className="btn-view">Xem chi tiết</button>
                     <button className="btn-wishlist">

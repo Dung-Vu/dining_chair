@@ -67,11 +67,11 @@ const Brand = () => {
           <div className="brand-images">
             <div className="brand-image-grid">
               <div className="brand-img brand-img-1">
-                <div className="img-placeholder"></div>
-              </div>
+  <img src="/assets/img/gemini.png" alt="Brand 1" className="img-placeholder" />
+</div>
               <div className="brand-img brand-img-2">
-                <div className="img-placeholder"></div>
-              </div>
+  <img src="/assets/img/gemini1.png" alt="Brand 2" className="img-placeholder" />
+</div>
               <div className="quote-card">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="quote-icon">
                   <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>

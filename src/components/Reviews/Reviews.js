@@ -11,7 +11,7 @@ const Reviews = () => {
       role: 'Kiến trúc sư',
       rating: 5,
       comment: 'Chất lượng vượt ngoài mong đợi! Những chiếc ghế không chỉ đẹp mà còn vô cùng thoải mái. Tôi đã sử dụng cho nhiều dự án và khách hàng luôn hài lòng.',
-      image: 1
+      image: 'image'
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const Reviews = () => {
       role: 'Chủ nhà hàng',
       rating: 5,
       comment: 'Bornario đã giúp không gian nhà hàng của tôi thăng hạng đáng kể. Thiết kế sang trọng, bền bỉ theo thời gian. Rất đáng để đầu tư!',
-      image: 2
+      image: 'image1'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const Reviews = () => {
       role: 'Nhà thiết kế nội thất',
       rating: 5,
       comment: 'Tôi luôn tin tưởng lựa chọn Bornario cho các dự án của mình. Sự chú ý đến từng chi tiết và cam kết về chất lượng thật sự ấn tượng.',
-      image: 3
+      image: 'image2'
     }
   ];
 
@@ -69,7 +69,9 @@ const Reviews = () => {
                 
                 <div className="reviewer-info">
                   <div className="reviewer-avatar">
-                    <div className="avatar-placeholder"></div>
+                    <div className="avatar-placeholder">
+                        <img src={`/assets/img/${review.image}.jpg`} alt={review.name} style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}} />
+                    </div>
                   </div>
                   <div className="reviewer-details">
                     <h4>{review.name}</h4>

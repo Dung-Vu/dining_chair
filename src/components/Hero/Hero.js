@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="hero-image">
           <div className="image-wrapper">
             <div className="image-placeholder">
-              {/* Placeholder for main chair image */}
+              <img src="/assets/img/gemini2.png" alt="Dining Chair" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
               <div className="chair-silhouette"></div>
             </div>
             <div className="floating-badge badge-1">
