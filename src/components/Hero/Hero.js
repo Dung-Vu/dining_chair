@@ -9,16 +9,15 @@ const Hero = () => {
           <span className="subtitle">Bộ Sưu Tập 2025</span>
           <h1 className="heading-primary">
             Tinh Hoa<br />
-            Nghệ Thuật<br />
-            Ẩm Thực
+            Ghế Ăn<br />
           </h1>
           <p className="hero-description">
-            Khám phá vẻ đẹp hoàn mỹ của những chiếc ghế ăn được chế tác thủ công,
-            nơi sự tinh tế gặp gỡ công năng trong không gian sống hiện đại.
+            Khám phá chiếc ghế ăn Ordinaire Dining được chế tác riêng cho bàn tiệc sang trọng,
+            kết hợp đường cong ôm lưng, đệm khí hậu và gỗ tự nhiên chuẩn FSC cho trải nghiệm ngồi đẳng cấp.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">Khám phá ngay</button>
-            <button className="btn btn-secondary">Liên hệ tư vấn</button>
+            <button className="btn btn-primary">Đặt mua ngay</button>
+            <button className="btn btn-secondary">Đặt lịch trải nghiệm</button>
           </div>
         </div>
         
@@ -29,12 +28,12 @@ const Hero = () => {
               <div className="chair-silhouette"></div>
             </div>
             <div className="floating-badge badge-1">
-              <span className="badge-number">15+</span>
-              <span className="badge-text">Năm kinh nghiệm</span>
+              <span className="badge-number">10+</span>
+              <span className="badge-text">Năm chế tác ghế</span>
             </div>
             <div className="floating-badge badge-2">
               <span className="badge-number">100%</span>
-              <span className="badge-text">Gỗ tự nhiên</span>
+              <span className="badge-text">Gỗ tự nhiên chuẩn FSC</span>
             </div>
           </div>
         </div>
@@ -42,18 +41,18 @@ const Hero = () => {
       
       <div className="hero-stats">
         <div className="stat-item">
-          <h3>5000+</h3>
-          <p>Khách hàng hài lòng</p>
+          <h3>500+</h3>
+          <p>Gia đình đang sở hữu</p>
         </div>
         <div className="stat-divider"></div>
         <div className="stat-item">
-          <h3>50+</h3>
-          <p>Mẫu mã độc quyền</p>
+          <h3>10+</h3>
+          <p>Tùy chọn hoàn thiện</p>
         </div>
         <div className="stat-divider"></div>
         <div className="stat-item">
           <h3>98%</h3>
-          <p>Đánh giá 5 sao</p>
+          <p>Hài lòng của khách hàng</p>
         </div>
       </div>
       

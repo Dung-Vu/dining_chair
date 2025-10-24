@@ -46,7 +46,7 @@ const Reviews = () => {
           <span className="subtitle">Đánh Giá Khách Hàng</span>
           <h2 className="heading-secondary">
             Trải Nghiệm<br />
-            Thực Tế
+            Ghế Bornario
           </h2>
         </div>
 

@@ -78,8 +78,8 @@ const Collection = () => {
             </h2>
           </div>
           <p className="collection-intro body-text">
-            Khám phá bộ sưu tập ghế ăn được tuyển chọn kỹ lưỡng, 
-            mỗi chiếc đều là tác phẩm nghệ thuật độc đáo mang dấu ấn riêng.
+            Khám phá bộ sưu tập ghế ăn với khung gỗ chuẩn mộng khóa, đệm foam đàn hồi cao 
+            và các tùy chọn bọc vải độc quyền giúp tôn lên phong cách của từng không gian.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ const Collection = () => {
         </div>
 
         <div className="collection-cta">
-          <button className="btn btn-primary">Xem toàn bộ bộ sưu tập</button>
+          <button className="btn btn-primary">Xem toàn bộ ghế Bornario</button>
         </div>
       </div>
     </section>

@@ -3,12 +3,12 @@ import './Gallery.css';
 
 const Gallery = () => {
   const galleryItems = [
-    { id: 'gemini', span: 'large', title: 'Modern Living' },
-    { id: 'gemini', span: 'small', title: 'Detail Shot' },
-    { id: 'gemini', span: 'medium', title: 'Classic Design' },
-    { id: 'gemini1', span: 'medium', title: 'Craftsmanship' },
-    { id: 'gemini1', span: 'small', title: 'Texture' },
-    { id: 'gemini1', span: 'large', title: 'Dining Space' }
+    { id: 'gemini', span: 'large', title: 'Bàn ăn phong cách Bắc Âu' },
+    { id: 'gemini', span: 'small', title: 'Đường cong tựa lưng' },
+    { id: 'gemini', span: 'medium', title: 'Phiên bản gỗ óc chó' },
+    { id: 'gemini1', span: 'medium', title: 'Mối nối thủ công' },
+    { id: 'gemini1', span: 'small', title: 'Vải dệt kháng bẩn' },
+    { id: 'gemini1', span: 'large', title: 'Không gian trưng bày' }
   ];
 
   return (
@@ -21,8 +21,8 @@ const Gallery = () => {
             Đẳng Cấp
           </h2>
           <p className="body-text gallery-description">
-            Từng góc nhìn, từng chi tiết đều kể một câu chuyện về sự hoàn mỹ 
-            trong thiết kế và chất lượng vượt trội.
+            Mỗi khung hình phô diễn sự tinh tế của tay vịn bo cong, vân gỗ chọn lọc 
+            và cách chiếc ghế nâng tầm toàn bộ không gian phòng ăn.
           </p>
         </div>
 
