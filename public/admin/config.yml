@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Dung-Vu/dining_chair
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 media_folder: "public/assets/img"
 public_folder: "/assets/img"
