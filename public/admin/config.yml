@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/img"
+public_folder: "/assets/img"
+
+collections:
+  - name: "products"
+    label: "Sản phẩm"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tên sản phẩm", name: "name", widget: "string" }
+      - { label: "Danh mục", name: "category", widget: "select", options: ["modern", "classic", "minimalist"] }
+      - { label: "Giá", name: "price", widget: "string" }
+      - { label: "Mô tả", name: "description", widget: "text" }
+      - { label: "Hình ảnh", name: "image", widget: "image" }
+      - { label: "Thứ tự", name: "order", widget: "number", default: 0 }
+      - { label: "Trạng thái", name: "status", widget: "select", options: ["active", "inactive"], default: "active" }
+
+  - name: "gallery"
+    label: "Thư viện ảnh"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Hình ảnh", name: "image", widget: "image" }
+      - { label: "Kích thước", name: "span", widget: "select", options: ["small", "medium", "large"] }
+      - { label: "Thứ tự", name: "order", widget: "number", default: 0 }
+
+  - name: "reviews"
+    label: "Đánh giá"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tên khách hàng", name: "name", widget: "string" }
+      - { label: "Vai trò", name: "role", widget: "string" }
+      - { label: "Đánh giá", name: "rating", widget: "number", min: 1, max: 5, default: 5 }
+      - { label: "Nội dung", name: "comment", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+      - { label: "Thứ tự", name: "order", widget: "number", default: 0 }
+
+  - name: "settings"
+    label: "Cài đặt"
+    files:
+      - label: "Thông tin chung"
+        name: "general"
+        file: "content/settings/general.json"
+        fields:
+          - { label: "Tên thương hiệu", name: "brand_name", widget: "string", default: "BORNARIO" }
+          - { label: "Slogan", name: "slogan", widget: "string", default: "Luxury Dining" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Số điện thoại", name: "phone", widget: "string" }
+          - { label: "Địa chỉ", name: "address", widget: "text" }
+          - { label: "Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "Twitter", name: "twitter", widget: "string", required: false }
+          - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
