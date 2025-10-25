@@ -1,4 +1,192 @@
-# 🔧 Fix Lỗi "Not Found" - Setup OAuth cho DecapCMS trên Cloudflare
+# � Hướng dẫn Deploy và Sử dụng CMS trên Cloudflare Pages
+
+## ✅ **Giải pháp hoàn chỉnh - Đăng nhập CMS bằng GitHub Token**
+
+---
+
+## 📦 **Bước 1: Push code lên GitHub**
+
+```bash
+cd "c:\Users\Admin\OneDrive\Máy tính\Bornario\dining_chair"
+git add .
+git commit -m "Fix CMS login with GitHub token"
+git push origin main
+```
+
+---
+
+## ⏳ **Bước 2: Đợi Cloudflare Pages rebuild**
+
+1. Truy cập: https://dash.cloudflare.com/
+2. Chọn project **dining_chair** (hoặc tên project của bạn)
+3. Đợi build hoàn thành (2-3 phút)
+4. Kiểm tra status: **Success** ✅
+
+---
+
+## 🔑 **Bước 3: Đăng nhập CMS**
+
+### **Cách 1: Đăng nhập qua URL (KHUYẾN NGHỊ)**
+
+Truy cập URL sau (thay `YOUR_TOKEN` bằng token của bạn):
+
+```
+https://chair.bonstu.site/admin/?token=ghp_S4d5OE4rdPbkaRLsuQR1cjJr4sA7xp21fAoi
+```
+
+**Lưu ý:** Token sẽ tự động được lưu và URL sẽ được làm sạch
+
+### **Cách 2: Đăng nhập thủ công qua Console**
+
+1. Truy cập: `https://chair.bonstu.site/admin/`
+2. Nhấn **F12** → Chọn tab **Console**
+3. Paste lệnh sau và nhấn **Enter**:
+
+```javascript
+localStorage.setItem('netlify-cms-user', JSON.stringify({
+  backendName: 'github',
+  token: 'ghp_S4d5OE4rdPbkaRLsuQR1cjJr4sA7xp21fAoi',
+  login: 'Dung-Vu'
+}));
+location.reload();
+```
+
+---
+
+## 🎯 **Bước 4: Sử dụng CMS**
+
+Sau khi đăng nhập thành công, bạn sẽ thấy giao diện CMS với các menu:
+
+### **1. Contents (Nội dung)**
+- **Sản phẩm** - Quản lý sản phẩm ghế ăn
+- **Thư viện ảnh** - Upload và quản lý hình ảnh
+- **Đánh giá** - Quản lý review khách hàng
+- **Cài đặt** - Cấu hình thông tin website
+
+### **2. Media (Thư viện media)**
+- Quản lý tất cả hình ảnh
+- Upload, sửa, xóa file
+
+### **3. Workflow (Quy trình làm việc)**
+- **Drafts** - Nội dung nháp
+- **In Review** - Đang chờ duyệt
+- **Ready** - Sẵn sàng publish
+
+---
+
+## 📝 **Hướng dẫn thêm/sửa nội dung**
+
+### **Thêm sản phẩm mới:**
+
+1. Click **Contents** → **Sản phẩm**
+2. Click **New Sản phẩm**
+3. Điền thông tin:
+   - **Tên sản phẩm**: Tên ghế
+   - **Danh mục**: modern/classic/minimalist
+   - **Giá**: Giá bán
+   - **Mô tả**: Mô tả chi tiết
+   - **Hình ảnh**: Upload ảnh sản phẩm
+   - **Thứ tự**: Thứ tự hiển thị (0, 1, 2...)
+   - **Trạng thái**: active/inactive
+4. Click **Publish** → **Publish now**
+
+### **Thêm ảnh vào Gallery:**
+
+1. Click **Contents** → **Thư viện ảnh**
+2. Click **New Thư viện ảnh**
+3. Điền thông tin:
+   - **Tiêu đề**: Tên ảnh
+   - **Hình ảnh**: Upload ảnh
+   - **Kích thước**: small/medium/large
+   - **Thứ tự**: Thứ tự hiển thị
+4. Click **Publish**
+
+### **Thêm đánh giá khách hàng:**
+
+1. Click **Contents** → **Đánh giá**
+2. Click **New Đánh giá**
+3. Điền thông tin:
+   - **Tên khách hàng**
+   - **Vai trò** (Kiến trúc sư, Chủ nhà hàng...)
+   - **Đánh giá**: 1-5 sao
+   - **Nội dung**: Review của khách hàng
+   - **Avatar**: Upload ảnh đại diện
+4. Click **Publish**
+
+---
+
+## ⚠️ **Troubleshooting**
+
+### **Lỗi: "Could not establish connection"**
+**Giải pháp:**
+- Xóa cache trình duyệt (Ctrl + Shift + Delete)
+- Thử lại với trình duyệt ẩn danh (Incognito)
+- Đảm bảo token có quyền `repo` và `user`
+
+### **Lỗi: "Failed to persist entry"**
+**Giải pháp:**
+- Kiểm tra kết nối internet
+- Đảm bảo GitHub token chưa hết hạn
+- Kiểm tra quyền của collaborator trong repository
+
+### **Không thấy thay đổi trên website**
+**Giải pháp:**
+- Sau khi Publish, đợi Cloudflare Pages rebuild (2-3 phút)
+- Xóa cache website (Ctrl + F5)
+- Kiểm tra trong GitHub repository xem commit đã được tạo chưa
+
+---
+
+## 🔐 **Bảo mật Token**
+
+1. **KHÔNG chia sẻ token với người khác**
+2. **KHÔNG commit token vào code**
+3. **Token chỉ lưu trong localStorage của trình duyệt**
+4. **Nếu nghi ngờ token bị lộ:**
+   - Vào https://github.com/settings/tokens
+   - Xóa token cũ
+   - Tạo token mới
+   - Đăng nhập lại CMS với token mới
+
+---
+
+## 👥 **Cho phép người khác sử dụng CMS**
+
+### **Cách 1: Thêm Collaborator (Khuyến nghị)**
+1. Vào https://github.com/Dung-Vu/dining_chair/settings/access
+2. Click **Add people**
+3. Nhập username GitHub của họ
+4. Chọn quyền **Write**
+5. Họ tạo token riêng và đăng nhập CMS
+
+### **Cách 2: Chia sẻ token (Không khuyến nghị)**
+- Gửi cho họ URL login với token
+- **Lưu ý:** Họ sẽ có toàn quyền như bạn
+
+---
+
+## 📚 **Tài liệu tham khảo**
+
+- **DecapCMS Docs:** https://decapcms.org/docs/
+- **GitHub Token:** https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+- **Cloudflare Pages:** https://developers.cloudflare.com/pages/
+
+---
+
+## ✨ **Tính năng CMS**
+
+✅ Quản lý sản phẩm trực quan  
+✅ Upload hình ảnh dễ dàng  
+✅ Preview trước khi publish  
+✅ Editorial workflow (Draft → Review → Publish)  
+✅ Media library tập trung  
+✅ Markdown editor  
+✅ Tự động commit lên GitHub  
+✅ Tự động deploy lên Cloudflare Pages  
+
+---
+
+**Chúc bạn thành công! 🎉**
 
 ## ❌ **Nguyên nhân lỗi:**
 

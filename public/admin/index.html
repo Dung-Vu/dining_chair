@@ -4,10 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quản lý nội dung - Bornario CMS</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    // Auto login with token from URL or localStorage
+    (function() {
+      // Get token from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlToken = urlParams.get('token');
+      
+      if (urlToken) {
+        // Save token to localStorage
+        localStorage.setItem('netlify-cms-user', JSON.stringify({
+          backendName: 'github',
+          token: urlToken,
+          login: 'Dung-Vu'
+        }));
+        
+        // Remove token from URL
+        window.history.replaceState({}, document.title, window.location.pathname + '#/');
+        
+        // Reload to apply token
+        window.location.reload();
+      }
+    })();
+  </script>
 </body>
 </html>
