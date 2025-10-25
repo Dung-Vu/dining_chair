@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GitHub OAuth Handler</title>
+</head>
+<body>
+  <script>
+    // OAuth callback handler for DecapCMS
+    (function() {
+      var message = {
+        error: window.location.href.match(/error=([^&]+)/),
+        code: window.location.href.match(/code=([^&]+)/)
+      };
+
+      if (message.code || message.error) {
+        message.code = message.code && message.code[1];
+        message.error = message.error && message.error[1];
+        
+        // Send message to parent window (CMS admin)
+        window.opener.postMessage(
+          'authorization:github:' + JSON.stringify(message),
+          window.location.origin
+        );
+        
+        // Close the popup
+        window.close();
+      }
+    })();
+  </script>
+</body>
+</html>
