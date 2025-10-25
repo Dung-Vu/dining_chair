@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: Dung-Vu/dining_chair
+  name: git-gateway
   branch: main
 
 # Cho phép chỉnh sửa draft trước khi publish

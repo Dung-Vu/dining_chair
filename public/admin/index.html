@@ -4,117 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quản lý nội dung - Bornario CMS</title>
-  <style>
-    .token-login {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      z-index: 10000;
-      min-width: 400px;
-    }
-    .token-login.show {
-      display: block;
-    }
-    .token-login h2 {
-      margin: 0 0 20px 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-    .token-login input {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-    .token-login button {
-      width: 100%;
-      padding: 12px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .token-login button:hover {
-      background: #1d4ed8;
-    }
-  </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Token Login Form -->
-  <div id="token-login" class="token-login">
-    <h2>🔐 Đăng nhập CMS</h2>
-    <p style="color: #666; margin-bottom: 20px;">Nhập GitHub Personal Access Token:</p>
-    <input type="text" id="github-token" placeholder="ghp_xxxxxxxxxxxx" />
-    <button onclick="loginWithToken()">Đăng nhập</button>
-  </div>
-
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   
   <script>
-    // Check if user is already logged in
-    function checkLogin() {
-      const user = localStorage.getItem('netlify-cms-user');
-      if (!user) {
-        // Show token login form
-        document.getElementById('token-login').classList.add('show');
-      }
-    }
-    
-    // Login with token
-    function loginWithToken() {
-      const token = document.getElementById('github-token').value.trim();
-      
-      if (!token) {
-        alert('Vui lòng nhập token!');
-        return;
-      }
-      
-      if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
-        alert('Token không hợp lệ! Token phải bắt đầu bằng "ghp_" hoặc "github_pat_"');
-        return;
-      }
-      
-      // Save token to localStorage
-      localStorage.setItem('netlify-cms-user', JSON.stringify({
-        backendName: 'github',
-        token: token,
-        login: 'Dung-Vu'
-      }));
-      
-      // Hide login form
-      document.getElementById('token-login').classList.remove('show');
-      
-      // Reload to apply authentication
-      window.location.reload();
-    }
-    
-    // Auto login from URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlToken = urlParams.get('token');
-    
-    if (urlToken) {
-      localStorage.setItem('netlify-cms-user', JSON.stringify({
-        backendName: 'github',
-        token: urlToken,
-        login: 'Dung-Vu'
-      }));
-      
-      // Clean URL
-      window.history.replaceState({}, document.title, window.location.pathname + '#/');
-      window.location.reload();
-    } else {
-      // Check login status after page loads
-      setTimeout(checkLogin, 1000);
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
     }
   </script>
 </body>
