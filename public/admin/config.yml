@@ -2,9 +2,6 @@ backend:
   name: github
   repo: Dung-Vu/dining_chair
   branch: main
-  # Sử dụng GitHub OAuth trực tiếp
-  base_url: https://chair.bonstu.site
-  auth_endpoint: /auth
 
 # Cho phép chỉnh sửa draft trước khi publish
 publish_mode: editorial_workflow
