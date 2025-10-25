@@ -13,15 +13,14 @@ const Brand = () => {
               Gặp Gỡ Hiện Đại
             </h2>
             <p className="body-text">
-              Bornario được thành lập với niềm đam mê tạo nên những món đồ nội thất 
-              không chỉ đẹp mắt mà còn mang giá trị trường tồn. Mỗi chiếc ghế ăn của 
-              chúng tôi là kết tinh của tay nghề thủ công tinh xảo, kết hợp cùng thiết 
-              kế hiện đại và vật liệu cao cấp.
+              Bornario ra đời để kiến tạo chiếc ghế ăn trung tâm của mọi bàn tiệc. 
+              Từng đường cong được tính toán bởi nghệ nhân, kết hợp công nghệ ép đệm 
+              hiện đại để giữ tư thế chuẩn và êm ái trong suốt bữa ăn dài.
             </p>
             <p className="body-text">
-              Chúng tôi tin rằng bữa ăn gia đình không chỉ là thời gian dùng bữa, mà là 
-              khoảnh khắc kết nối, là nơi những câu chuyện được chia sẻ. Và chiếc ghế ăn 
-              chính là người bạn đồng hành thầm lặng cho những khoảnh khắc quý giá ấy.
+              Dịch vụ đo dáng, phối màu vải và hoàn thiện gỗ theo yêu cầu giúp chiếc ghế 
+              hòa hợp trọn vẹn với không gian sống của bạn, từ phòng ăn gia đình đến 
+              showroom cao cấp.
             </p>
             
             <div className="brand-features">
@@ -33,7 +32,7 @@ const Brand = () => {
                 </div>
                 <div>
                   <h4>Gỗ Tự Nhiên Cao Cấp</h4>
-                  <p>Được chọn lọc kỹ càng từ những nguồn gỗ bền vững</p>
+                  <p>Lựa chọn óc chó, sồi, tần bì đạt chứng nhận nguồn gốc bền vững</p>
                 </div>
               </div>
               
@@ -45,7 +44,7 @@ const Brand = () => {
                 </div>
                 <div>
                   <h4>Thủ Công Tinh Xảo</h4>
-                  <p>Mỗi sản phẩm được chế tác bởi nghệ nhân giàu kinh nghiệm</p>
+                  <p>Mộng gỗ khóa, bo cạnh hoàn thiện thủ công cho độ bền vượt trội</p>
                 </div>
               </div>
               
@@ -58,7 +57,7 @@ const Brand = () => {
                 </div>
                 <div>
                   <h4>Bảo Hành Trọn Đời</h4>
-                  <p>Cam kết chất lượng với chính sách bảo hành dài hạn</p>
+                  <p>Bảo hành khung trọn đời, bảo dưỡng tại nhà định kỳ miễn phí</p>
                 </div>
               </div>
             </div>

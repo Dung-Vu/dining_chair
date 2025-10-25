@@ -10,11 +10,11 @@ const Footer = () => {
             <div className="footer-column footer-about">
               <div className="footer-logo">
                 <h2>BORNARIO</h2>
-                <span>Luxury Dining</span>
+                <span>Signature Seating</span>
               </div>
               <p className="footer-description">
-                Nơi nghệ thuật chế tác gặp gỡ thiết kế hiện đại, 
-                tạo nên những sản phẩm nội thất đẳng cấp cho không gian sống của bạn.
+                Nơi nghệ thuật chế tác gặp gỡ thiết kế công thái học, mang đến những chiếc 
+                ghế ăn đẳng cấp nâng tầm từng khoảnh khắc quây quần của gia đình bạn.
               </p>
               <div className="footer-social">
                 <a href="https://fb.com/dinhdung521" className="social-link">

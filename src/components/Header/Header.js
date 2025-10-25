@@ -19,7 +19,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo">
           <h1>BORNARIO</h1>
-          <span>Luxury Dining</span>
+          <span>Signature Seating</span>
         </div>
 
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
